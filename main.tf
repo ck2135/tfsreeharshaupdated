@@ -23,7 +23,7 @@ resource "aws_internet_gateway" "default" {
 resource "aws_subnet" "subnet1-public" {
   vpc_id            = "${aws_vpc.default.id}"
   cidr_block        = "${var.public_subnet1_cidr}"
-  availability_zone = "us-east-1a"
+  availability_zone = "ap-south-1a"
 
   tags = {
     Name = "${var.public_subnet1_name}"
@@ -33,7 +33,7 @@ resource "aws_subnet" "subnet1-public" {
 resource "aws_subnet" "subnet2-public" {
   vpc_id            = "${aws_vpc.default.id}"
   cidr_block        = "${var.public_subnet2_cidr}"
-  availability_zone = "us-east-1b"
+  availability_zone = "ap-south-1b"
 
   tags = {
     Name = "${var.public_subnet2_name}"
@@ -43,7 +43,7 @@ resource "aws_subnet" "subnet2-public" {
 resource "aws_subnet" "subnet3-public" {
   vpc_id            = "${aws_vpc.default.id}"
   cidr_block        = "${var.public_subnet3_cidr}"
-  availability_zone = "us-east-1c"
+  availability_zone = "ap-south-1c"
 
   tags = {
     Name = "${var.public_subnet3_name}"
@@ -94,7 +94,7 @@ terraform {
   backend "s3" {
     bucket = "terraform-may20"
     key    = "test.tfstate"
-    region = "us-east-1"
+    region = "ap-south-1"
   }
 }
 
